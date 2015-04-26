@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+entity Decoder_2_4 is
+port(
+	x : in STD_LOGIC;
+	y : in STD_LOGIC;
+	D0 : out STD_LOGIC;
+	D1 : out STD_LOGIC;
+	D2 : out STD_LOGIC;
+	D3 : out STD_LOGIC;
+);
+end Decoder_2_4;
+
+architecture Decoder_2_4 arc of decoder_2_4 is
+begin
+	D0<=(not(x)and not(y));
+	D1<=(not(x)and (y));
+	D2<=((x)and not(y));
+	D3<=((x)and (y));
+end decoder_2_4_arc;
