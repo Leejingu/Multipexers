@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+entity multiplexer_4_1 is
+port(
+	I0 : in STD_LOGIC;
+	I1 : in STD_LOGIC;
+	I2 : in STD_LOGIC;
+	I3 : in STD_LOGIC;
+	S0 : in STD_LOGIC;
+	S1 : in STD_LOGIC;
+	Result : out STD_LOGIC;
+);
+end multiplexer_4_1;
+
+architecture multiplexer_4_1 arc of multipexer_4_1 is
+signal result A : STD_LOGIC;
+signal result B : STD_LOGIC;
+signal result C : STD_LOGIC;
+signal result D : STD_LOGIC;
+begin
+	result A <=(I0 and(not SO)and(not S!));
+	result B <=(I1 and(not S0)and(S1));
+	result C <=(I2 and(S0)and (notS1));
+	result D <=(I3 and(S0)and (S1));
+	Result <=((resultA)or(resultB)or(resultC)or(resultD));
+end multiplexer_4_1_arc;
